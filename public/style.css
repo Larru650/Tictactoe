@@ -1,0 +1,28 @@
+.board{
+    height:auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 250px;
+    padding: 0;
+    max-width: 225px;
+}
+ 
+.cell{
+    /* margin: 10px 0 10px 0; */
+    padding: 10px 0 10px 0;;
+    font-size: xx-large;
+    border-style: solid;
+    border-color: lightgray;
+    height: 75px !important;
+    width: 75px !important;
+    display: inline-block;
+    user-select: none;
+    
+} 
+
+.cell:hover{
+    color: gray;
+    background-color: lightblue;
+    opacity: 0.8;
+} 

@@ -1,0 +1,2 @@
+Cada jugador te q fer  la sequencia 1-2-3 seguits, i es comensa en un mapa 3*3 com el tres en ralla normal.
+ Llavors quan es necssita mes espai, s'amplia a un 5*5 (es fa zoom out), i si inclus aixi no sarriba a fer 123, pos 7*7
