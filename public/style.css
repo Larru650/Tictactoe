@@ -6,6 +6,7 @@
     margin-top: 250px;
     padding: 0;
     max-width: 225px;
+    max-height: 225px;
 }
  
 .cell{
@@ -26,3 +27,8 @@
     background-color: lightblue;
     opacity: 0.8;
 } 
+
+.users-table{
+    background-color: lightgray;
+    float: right;
+}

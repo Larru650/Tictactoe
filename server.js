@@ -15,7 +15,7 @@ var users = [];
 
 
 function Player(id, nickname, role) {
-    this.id = id,
+        this.id = id,
         this.nickname = nickname,
         this.role = role
 }
@@ -46,6 +46,7 @@ io.sockets.on('connection', function (socket) {
             if (lobbies[i].playerCount < 2) {
                 console.log(socket.id + " joined lobby " + i)
                 socket.lobbyId = i;
+                updateUsernames(player.nickname, socket.lobbyId);
                 lobbies[i].players[socket.id] = player.id;
                 lobbies[i].playerCount++;
                 if (lobbies[i].playerCount == 2) { //that means that it was 1 when the user joined
@@ -123,19 +124,17 @@ socket.on('leave', function (user, username) {
 });
 });
 
-function updateUsernames() {
-    console.log("users list", users);
+function updateUsernames(name, lobby) {
+    var user = {name: name, lobby: lobby};
+    users.push(user);
     console.log("");
     for (var i = 0; i < users.length; i++) {
         console.log("----------------CONNECTIONS------------------------");
-
         console.log("Connection no " + i + ": ", users[i]);
-
     }
     console.log("");
     io.sockets.emit('get users', users);
 };
-
 
 http.listen(8080, function () {
     console.log('listening on *:8080');
